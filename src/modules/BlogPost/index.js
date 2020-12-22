@@ -1,13 +1,9 @@
-import React, {
-  useContext,
-  useEffect,
-  Fragment,
-  useState,
-} from 'react';
-import { MainImageContext } from '../../components';
-import { Title } from './styles';
-import sanityClient from '../../client';
+import BlockContent from '@sanity/block-content-to-react';
 import groq from 'groq';
+import React, { useContext, useEffect, useState } from 'react';
+import sanityClient from '../../client';
+import { MainImageContext } from '../../components';
+import { Content, Title } from './styles';
 
 const BlogPost = ({ match }) => {
   const [post, setPost] = useState({});
@@ -43,7 +39,15 @@ const BlogPost = ({ match }) => {
     };
   }, [slug]);
   console.log('post', post);
-  return <div>{slug}</div>;
+  return (
+    <Content>
+      <BlockContent
+        blocks={post.body}
+        projectId={sanityClient.clientConfig.projectId}
+        dataset={sanityClient.clientConfig.dataset}
+      />
+    </Content>
+  );
 };
 
 export default BlogPost;

@@ -15,4 +15,23 @@ const Title = styled.div`
   font-weight: 600;
 `;
 
-export { Title };
+const Content = styled.div`
+  width: 50%;
+  margin: auto;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  & figure {
+    text-align: center;
+  }
+  & * {
+    margin-bottom: 1.25rem;
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    line-height: 2rem;
+  }
+`;
+
+export { Title, Content };

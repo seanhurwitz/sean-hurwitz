@@ -4,6 +4,7 @@ const Header = styled.div`
   width: 100%;
   height: ${({ theme }) => theme.headerHeight};
   position: fixed;
+  z-index: 10000;
   top: 0;
   left: 0;
   display: flex;
@@ -13,6 +14,7 @@ const Header = styled.div`
     align-items: center;
     justify-content: center;
   }
+  background: ${({ theme }) => theme.colors.white};
 `;
 
 const DevDoneRight = styled.div`
