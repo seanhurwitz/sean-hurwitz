@@ -13,7 +13,12 @@ const MainImageProvider = ({ children }) => {
       value={{ setShowImage, setImageInner, setImg }}
     >
       {showImage && (
-        <MainImageContainer img={img || homeBg}>
+        <MainImageContainer
+          img={
+            img ||
+            'https://images.unsplash.com/photo-1508739826987-b79cd8b7da12?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=3366&q=80'
+          }
+        >
           {imageInner}
         </MainImageContainer>
       )}
