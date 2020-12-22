@@ -8,11 +8,19 @@ const Header = styled.div`
   left: 0;
   display: flex;
   padding: 0.5rem;
+  & a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const DevDoneRight = styled.div`
   color: ${({ theme }) => theme.colors.primaryBlue};
   font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Body = styled.div`

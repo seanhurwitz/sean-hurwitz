@@ -1,11 +1,14 @@
 import React, { Fragment } from 'react';
 import { Header, Body, DevDoneRight } from './styles';
+import { Link } from 'react-router-dom';
 
 const Shell = ({ children }) => {
   return (
     <Fragment>
       <Header>
-        <DevDoneRight>.devDoneRight</DevDoneRight>
+        <Link to="/">
+          <DevDoneRight>.devDoneRight</DevDoneRight>
+        </Link>
       </Header>
       <Body>{children}</Body>
     </Fragment>

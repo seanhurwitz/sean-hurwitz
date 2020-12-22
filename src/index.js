@@ -1,20 +1,28 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
 import ReactDOM from 'react-dom';
-import './index.css';
-import reportWebVitals from './reportWebVitals';
-import { LandingScreen, BlogPosts } from './modules';
-import { Shell } from './components';
-import theme from './theme';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+} from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
+import { MainImageProvider, Shell } from './components';
+import './index.css';
+import { Home, BlogPost } from './modules';
+import reportWebVitals from './reportWebVitals';
+import theme from './theme';
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <ThemeProvider theme={theme}>
         <Shell>
-          <LandingScreen />
-          <BlogPosts />
+          <MainImageProvider>
+            <Switch>
+              <Route path="/:slug" component={BlogPost} />
+              <Route path="/" component={Home} />
+            </Switch>
+          </MainImageProvider>
         </Shell>
       </ThemeProvider>
     </Router>

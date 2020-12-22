@@ -1,2 +1,2 @@
-export { default as LandingScreen } from './LandingScreen';
-export { default as BlogPosts } from './BlogPosts';
+export { default as Home } from './Home';
+export { default as BlogPost } from './BlogPost';

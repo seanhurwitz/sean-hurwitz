@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import sanityClient from '../../client';
+import sanityClient from '../../../client';
 import { Post, PostsGrid, PostImage, PostContent } from './styles';
 import { Link } from 'react-router-dom';
 
