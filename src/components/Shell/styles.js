@@ -8,7 +8,7 @@ const Header = styled.div`
   top: 0;
   left: 0;
   display: flex;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   & a {
     display: flex;
     align-items: center;
