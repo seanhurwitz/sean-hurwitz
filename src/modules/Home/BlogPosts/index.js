@@ -2,22 +2,24 @@ import React, { useState, useEffect } from 'react';
 import sanityClient from '../../../client';
 import { Post, PostsGrid, PostImage, PostContent } from './styles';
 import { Link } from 'react-router-dom';
+import groq from 'groq';
 
 const BlogPosts = () => {
   const [allPostsData, setAllPosts] = useState([]);
   useEffect(() => {
     sanityClient
       .fetch(
-        `*[_type == "post"]{
+        groq`*[_type == "post"]{
           title,
           slug,
           mainImage{
             asset->{
             _id,
             url
-          }
+          },
+          _createdAt
         }
-      }`,
+      } | order(_createdAt desc)`,
       )
       .then((data) => setAllPosts(data))
       .catch((e) => console.log('e', e));

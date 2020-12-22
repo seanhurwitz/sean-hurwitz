@@ -7,6 +7,7 @@ import React, {
 import { MainImageContext } from '../../components';
 import { Title } from './styles';
 import sanityClient from '../../client';
+import groq from 'groq';
 
 const BlogPost = ({ match }) => {
   const [post, setPost] = useState({});
@@ -15,7 +16,7 @@ const BlogPost = ({ match }) => {
   useEffect(() => {
     sanityClient
       .fetch(
-        `*[slug.current == $slug]{
+        groq`*[slug.current == $slug]{
       title,
       slug,
       mainImage{
