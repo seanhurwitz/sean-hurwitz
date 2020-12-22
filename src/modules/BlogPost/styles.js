@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const Title = styled.div`
   position: absolute;
+  text-align: center;
   color: ${({ theme }) => theme.colors.black};
   top: 0;
   left: 0;
@@ -13,6 +14,9 @@ const Title = styled.div`
   z-index: 2;
   font-size: 10rem;
   font-weight: 600;
+  @media (max-width: ${({ theme }) => theme.mobileWidth}) {
+    font-size: 5rem;
+  }
 `;
 
 const Content = styled.div`
@@ -31,6 +35,12 @@ const Content = styled.div`
     font-family: Arial, Helvetica, sans-serif;
     text-align: justify;
     line-height: 2rem;
+  }
+  @media (max-width: ${({ theme }) => theme.mobileWidth}) {
+    width: 100%;
+    & img {
+      width: 100%;
+    }
   }
 `;
 

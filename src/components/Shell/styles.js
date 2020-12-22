@@ -15,6 +15,10 @@ const Header = styled.div`
     justify-content: center;
   }
   background: ${({ theme }) => theme.colors.white};
+  @media (max-width: ${({ theme }) => theme.mobileWidth}) {
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const DevDoneRight = styled.div`

@@ -27,9 +27,23 @@ const SplashContainer = styled.div`
     font-size: 1rem;
     font-style: italic;
   }
+  @media (max-width: ${({ theme }) => theme.mobileWidth}) {
+    width: 80%;
+    & h1 {
+      font-size: 3.5rem;
+    }
+    & h2 {
+      font-size: 1.5rem;
+    }
+    & h3 {
+      font-size: 0.75rem;
+      font-style: italic;
+    }
+  }
 `;
 
 const BlogPostsHeader = styled.div`
+  text-align: center;
   width: 100%;
   padding: 0.5rem;
   display: flex;

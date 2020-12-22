@@ -5,6 +5,11 @@ const PostsGrid = styled.div`
   grid-column-gap: 0.5rem;
   grid-template-columns: repeat(6, 1fr);
   padding: 0.5rem;
+  @media (max-width: ${({ theme }) => theme.mobileWidth}) {
+    grid-template-columns: 1fr;
+    grid-row-gap: 0.5rem;
+    padding: 0.5rem 5rem;
+  }
 `;
 
 const Post = styled.div`
@@ -53,6 +58,7 @@ const PostContent = styled.div`
   color: ${({ theme }) => theme.colors.primaryBlue};
   font-weight: bold;
   transition: 100ms;
+  text-align: center;
 `;
 
 export { Post, PostsGrid, PostImage, PostContent };

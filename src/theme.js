@@ -1,5 +1,6 @@
 const theme = {
   headerHeight: '68px',
+  mobileWidth: '700px',
   colors: {
     primaryBlue: '#259494',
     white: '#FFFFFF',
