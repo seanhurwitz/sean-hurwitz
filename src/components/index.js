@@ -1,3 +1,1 @@
-import { Header } from './UI';
-
-export { Header };
+export { default as Shell } from './Shell';
