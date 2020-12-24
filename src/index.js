@@ -8,7 +8,7 @@ import {
 import { ThemeProvider } from 'styled-components';
 import { MainImageProvider, Shell } from './components';
 import './index.css';
-import { Home, BlogPost } from './modules';
+import { Home, BlogPost, About } from './modules';
 import reportWebVitals from './reportWebVitals';
 import theme from './theme';
 
@@ -19,6 +19,7 @@ ReactDOM.render(
         <Shell>
           <MainImageProvider>
             <Switch>
+              <Route path="/about" component={About} />
               <Route path="/:slug" component={BlogPost} />
               <Route path="/" component={Home} />
             </Switch>

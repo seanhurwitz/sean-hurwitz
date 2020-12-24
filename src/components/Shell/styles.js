@@ -8,7 +8,8 @@ const Header = styled.div`
   top: 0;
   left: 0;
   display: flex;
-  padding: 0.5rem 1rem;
+  align-items: center;
+  justify-content: space-between;
   & a {
     display: flex;
     align-items: center;
@@ -18,10 +19,12 @@ const Header = styled.div`
   @media (max-width: ${({ theme }) => theme.mobileWidth}) {
     align-items: center;
     justify-content: center;
+    flex-direction: column;
   }
 `;
 
 const DevDoneRight = styled.div`
+  padding: 0 1rem;
   color: ${({ theme }) => theme.colors.primaryBlue};
   font-size: 2rem;
   display: flex;

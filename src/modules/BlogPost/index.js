@@ -7,9 +7,12 @@ import { Content, Title } from './styles';
 
 const BlogPost = ({ match }) => {
   const [post, setPost] = useState({});
-  const { setImg, setImageInner } = useContext(MainImageContext);
+  const { setImg, setImageInner, setLoading } = useContext(
+    MainImageContext,
+  );
   const { slug } = match.params;
   useEffect(() => {
+    setLoading(true);
     sanityClient
       .fetch(
         groq`*[slug.current == $slug]{
@@ -28,17 +31,17 @@ const BlogPost = ({ match }) => {
         { slug },
       )
       .then((data) => {
+        setLoading(false);
         setPost(data[0]);
         setImg(data[0].mainImage.asset.url);
         setImageInner(<Title>{data[0].title}</Title>);
       });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     return () => {
       setImg(null);
       setImageInner(null);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [slug]);
-  console.log('post', post);
   return (
     <Content>
       <BlockContent
