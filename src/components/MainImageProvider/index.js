@@ -18,6 +18,7 @@ const MainImageProvider = ({ children }) => {
         setImg,
         setLoading,
         setImgOverlay,
+        loading,
       }}
     >
       {loading ? (

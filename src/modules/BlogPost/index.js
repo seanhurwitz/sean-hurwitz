@@ -7,7 +7,7 @@ import { Content, Title } from './styles';
 
 const BlogPost = ({ match }) => {
   const [post, setPost] = useState({});
-  const { setImg, setImageInner, setLoading } = useContext(
+  const { setImg, setImageInner, setLoading, loading } = useContext(
     MainImageContext,
   );
   const { slug } = match.params;
@@ -31,10 +31,10 @@ const BlogPost = ({ match }) => {
         { slug },
       )
       .then((data) => {
-        setLoading(false);
         setPost(data[0]);
         setImg(data[0].mainImage.asset.url);
         setImageInner(<Title>{data[0].title}</Title>);
+        setLoading(false);
       });
     return () => {
       setImg(null);
@@ -44,11 +44,13 @@ const BlogPost = ({ match }) => {
   }, [slug]);
   return (
     <Content>
-      <BlockContent
-        blocks={post.body}
-        projectId={sanityClient.clientConfig.projectId}
-        dataset={sanityClient.clientConfig.dataset}
-      />
+      {!loading && (
+        <BlockContent
+          blocks={post.body}
+          projectId={sanityClient.clientConfig.projectId}
+          dataset={sanityClient.clientConfig.dataset}
+        />
+      )}
     </Content>
   );
 };

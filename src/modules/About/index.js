@@ -1,10 +1,7 @@
-import BlockContent from '@sanity/block-content-to-react';
-import groq from 'groq';
-import React, { useContext, useEffect, Fragment } from 'react';
-import sanityClient from '../../client';
-import { MainImageContext } from '../../components';
-import { Me, Filler } from './styles';
+import React, { Fragment, useContext, useEffect } from 'react';
 import me from '../../assets/me-hd.jpg';
+import { MainImageContext } from '../../components';
+import { Filler, Me } from './styles';
 
 const About = () => {
   const { setImg, setImageInner, setImgOverlay } = useContext(
@@ -28,7 +25,8 @@ const About = () => {
       setImgOverlay(true);
       setImageInner();
     };
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return <div>AB00T MEE</div>;
 };
 

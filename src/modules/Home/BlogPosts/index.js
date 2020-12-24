@@ -28,8 +28,8 @@ const BlogPosts = () => {
   return (
     <PostsGrid>
       {allPostsData.map((post) => (
-        <Link to={`/${post.slug.current}`}>
-          <Post key={post.title}>
+        <Link key={post.slug.current} to={`/${post.slug.current}`}>
+          <Post>
             <PostImage url={post.mainImage.asset.url} />
             <PostContent>{post.title}</PostContent>
           </Post>

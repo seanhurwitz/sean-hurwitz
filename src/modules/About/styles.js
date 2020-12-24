@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Me = styled.div`
   position: absolute;
-  left: 6vw;
+  left: 4vw;
   top: 230px;
   z-index: 2000;
   font-family: 'Patrick Hand SC', cursive;
@@ -13,10 +13,12 @@ const Me = styled.div`
   border-radius: 100px 100px 0 100px;
   color: ${({ theme }) => theme.colors.primaryBlue};
   @media (max-width: ${({ theme }) => theme.mobileWidth}) {
-    display: none;
+    top: 150px;
+    font-size: 5rem;
   }
 `;
 const Filler = styled.div`
+  cursor: none;
   position: absolute;
   right: 6vw;
   top: 100px;

@@ -1,28 +1,24 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import {
-  LogoTwitter32,
-  LogoGithub32,
-  LogoLinkedin32,
-} from '@carbon/icons-react';
-import { lighten } from 'polished';
-
-const styleIcon = (Component) => styled(Component)`
-  cursor: pointer;
-  & path {
-    fill: ${({ theme }) => theme.colors.primaryBlue};
-  }
-  :hover {
-    & path {
-      fill: ${({ theme }) => lighten(0.2, theme.colors.primaryBlue)};
-    }
-  }
-`;
 
 const NavItems = styled.div`
   display: flex;
+  flex-direction: ${({ mobile }) => (mobile ? 'column' : 'row')};
+  ${({ mobile }) =>
+    !mobile
+      ? css`
+          @media (max-width: ${({ theme }) => theme.mobileWidth}) {
+            display: none;
+          }
+        `
+      : css`
+          width: 100%;
+          & a {
+            width: 100%;
+          }
+        `}
   align-items: center;
-  height: 100%;
+  height: ${({ mobile }) => (mobile ? 'auto' : '100%')};
   & .active-nav {
     color: ${({ theme }) => theme.colors.primaryBlue};
     ::before {
@@ -70,22 +66,4 @@ const NavItem = styled(NavLink)`
   }
 `;
 
-const IconContainer = styled.div`
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-const Twitter = styleIcon(LogoTwitter32);
-const Github = styleIcon(LogoGithub32);
-const Linkedin = styleIcon(LogoLinkedin32);
-
-export {
-  NavItems,
-  NavItem,
-  Twitter,
-  Github,
-  IconContainer,
-  Linkedin,
-};
+export { NavItems, NavItem };
