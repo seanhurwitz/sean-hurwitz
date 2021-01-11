@@ -37,13 +37,23 @@ const Content = styled.div`
     line-height: 2rem;
   }
   & img {
-    width: 100%;
+    max-width: 100%;
   }
   @media (max-width: ${({ theme }) => theme.mobileWidth}) {
     width: 100%;
     & img {
       width: 100%;
     }
+  }
+  & blockquote {
+    margin-left: 2rem;
+    padding-left: 1rem;
+    border-left: 5px solid ${({ theme }) => theme.colors.lightGrey};
+    font-size: 1.25rem;
+    font-style: italic;
+  }
+  & ul {
+    margin-left: 2rem;
   }
 `;
 
