@@ -55,6 +55,10 @@ const Content = styled.div`
   & ul {
     margin-left: 2rem;
   }
+  & h1 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
 `;
 
 export { Title, Content };
