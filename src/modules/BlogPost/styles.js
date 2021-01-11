@@ -36,6 +36,9 @@ const Content = styled.div`
     text-align: justify;
     line-height: 2rem;
   }
+  & img {
+    width: 100%;
+  }
   @media (max-width: ${({ theme }) => theme.mobileWidth}) {
     width: 100%;
     & img {
