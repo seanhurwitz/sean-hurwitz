@@ -59,6 +59,7 @@ const DevDoneRight = styled.div`
 
 const Body = styled.div`
   margin-top: ${({ theme }) => theme.headerHeight};
+  background: ${({ theme }) => theme.colors.white};
   width: 100%;
 `;
 
