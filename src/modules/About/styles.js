@@ -1,43 +1,43 @@
 import styled from 'styled-components';
+import { lighten } from 'polished';
 
-const Me = styled.div`
-  position: absolute;
-  left: 4vw;
-  top: 230px;
-  z-index: 2000;
-  font-family: 'Patrick Hand SC', cursive;
-  font-size: 8rem;
-  transform: rotate(-20deg);
-  padding: 0 2rem;
-  background: ${({ theme }) => theme.colors.white};
-  border-radius: 100px 100px 0 100px;
-  color: ${({ theme }) => theme.colors.primaryBlue};
+const Content = styled.div`
+  width: 60%;
+  margin: auto;
+  padding: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
   @media (max-width: ${({ theme }) => theme.mobileWidth}) {
-    top: 150px;
-    font-size: 5rem;
+    width: 100%;
   }
 `;
-const Filler = styled.div`
-  cursor: none;
-  position: absolute;
-  right: 6vw;
-  top: 100px;
-  z-index: 2000;
-  width: 700px;
-  font-family: 'Patrick Hand SC', cursive;
+
+const Header = styled.div`
+  padding: 1rem 2rem;
   font-size: 3rem;
-  transform: rotate(5deg);
-  padding: 2rem;
-  background: ${({ theme }) => theme.colors.white};
-  border-radius: 100px 100px 100px 0;
   color: ${({ theme }) => theme.colors.primaryBlue};
-  text-align: center;
-  @media (max-width: ${({ theme }) => theme.mobileWidth}) {
-    display: none;
+  border-left: 8px solid ${({ theme }) => theme.colors.primaryBlue};
+  margin-bottom: 3rem;
+`;
+
+const Paragraph = styled.div`
+  width: 90%;
+  margin-left: auto;
+  /* border: 3px solid ${({ theme }) => theme.colors.lightGrey}; */
+  background: ${({ theme }) => lighten(0.05, theme.colors.lightGrey)};
+  padding: 1.5rem 2rem;
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  color: ${({ theme }) => theme.colors.darkGrey};
+  line-height: 2.5rem;
+  text-align: justify;
+  text-justify: inter-word;
+  & a {
+    color: ${({ theme }) => theme.colors.primaryBlue};
+    text-decoration: underline;
   }
-  :hover {
-    opacity: 0;
+  & p {
+    margin: 1rem 0;
   }
 `;
 
-export { Me, Filler };
+export { Content, Header, Paragraph };
