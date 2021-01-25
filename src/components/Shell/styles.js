@@ -46,6 +46,7 @@ const Header = styled.div`
   @media (max-width: ${({ theme }) => theme.mobileWidth}) {
     grid-template-columns: auto 1fr;
   }
+  box-shadow: 0 0.25rem 6px 0 rgba(0, 0, 0, 0.1);
 `;
 
 const DevDoneRight = styled.div`

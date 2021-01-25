@@ -59,6 +59,10 @@ const Content = styled.div`
     font-size: 2.5rem;
     line-height: 3rem;
   }
+  & a {
+    text-decoration: underline;
+    color: ${({ theme }) => theme.colors.primaryBlue};
+  }
 `;
 
 export { Title, Content };
